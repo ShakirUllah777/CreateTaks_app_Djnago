@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="text-center text-white">
+    <h1 class="display-4 fw-bold mb-3">
+        <span style="color:#ffdd57;">Create</span>
+        <span style="color:#ffffff;">Task</span>
+    </h1>
+
+    <p class="lead mb-4">
+        A simple and powerful task management app built with Django.
+    </p>
+
+    <div class="d-flex justify-content-center gap-3">
+        <a href="{% url 'login' %}" class="btn btn-light btn-lg">Login</a>
+        <a href="{% url 'register' %}" class="btn btn-outline-light btn-lg">Get Started</a>
+    </div>
+</div>
+
+{% endblock %}

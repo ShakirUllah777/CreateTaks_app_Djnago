@@ -1,18 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
+
 <div class="row justify-content-center">
-    <div class="col-md-6">
-        <div class="card shadow-sm border-danger">
-            <div class="card-body">
-                <h3 class="card-title mb-3 text-danger">Delete Task</h3>
-                <p>Are you sure you want to delete "<strong>{{ task.title }}</strong>"?</p>
-                <form method="POST">
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-danger w-100">Yes, Delete</button>
-                    <a href="{% url 'task_list' %}" class="btn btn-secondary w-100 mt-1">Cancel</a>
-                </form>
-            </div>
+    <div class="col-md-5">
+        <div class="card shadow p-4 text-center">
+            <h4>Delete Task</h4>
+            <p class="text-muted">Are you sure you want to delete <b>{{ task.title }}</b>?</p>
+
+            <form method="POST">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Yes, Delete</button>
+                <a href="{% url 'task_list' %}" class="btn btn-secondary ms-2">Cancel</a>
+            </form>
         </div>
     </div>
 </div>
+
 {% endblock %}

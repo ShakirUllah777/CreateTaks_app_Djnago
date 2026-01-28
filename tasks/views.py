@@ -7,9 +7,10 @@ from .models import Task
 from .forms import TaskForm
 
 
-
 def home_view(request):
-    return redirect('task_list')
+    if request.user.is_authenticated:
+        return redirect('task_list')
+    return render(request, 'home.html')
 
 def register_view(request):
     if request.user.is_authenticated:
